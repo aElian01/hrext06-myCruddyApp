@@ -2,9 +2,9 @@
 Create Read Update Delete using localStorage with JS, HTML and CSS
 
 
-## To Do List
+## Notes2Self App
 
-### Current Sprint
+### Sprint 1: basic CRUD overview using localStorage
 (the unchecked boxes are required to finish)
 - [x] Form with input fields
 - [x] Write to local storage
@@ -20,11 +20,32 @@ Create Read Update Delete using localStorage with JS, HTML and CSS
     - [ ] delete all storage.clear()
 - [x] Display stored value in proper div
 
-### Next Sprint (what are we trying to code)
-Examples: Replace with your own.
-- [ ] animate when new data is added
-- [ ] color code the data by timestape (older more greyed out)
-- [ ] Read from yelp api to get good bagel advice in a city
-- [ ] save my local storage to a remote storage for back up
 
-- [ ] Optional: Host on repl.it (html,css, js)
+### Sprint 2: creating a user model and a notes model
+- [ ] create user model which stores user id and username
+	- [ ] be able to save and retrieve user from db
+- [ ] create a notes model which stores notes id, title, body
+	- [ ] be able to save and retrieve notes from db
+- [ ] extend user and notes model for update and delete
+- [ ] extend user model to retrieve all notes by user
+- [ ] extend note model to retrieve notes in chronological order
+
+
+### Sprint 3: adding hashtags and hashtag cloud
+- [ ] extend notes model and table to support hashtags
+- [ ] parse and update hashtags out of note bodies
+- [ ] ability to query notes by hashtag
+- [ ] implement a way to get unique tag counts
+
+
+### Sprint 4: add UI 
+- [ ] implement homepage
+	- [ ] input field for note / code snippet
+	- [ ] list of recent notes / snippets
+	- [ ] hashtag cloud
+- [ ] individual note page for editing note
+- [ ] list of notes by tag
+- [ ] list of notes by user
+- [ ] user login / signup page
+
+

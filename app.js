@@ -32,4 +32,11 @@ $(document).ready(function(){
     $('.list-display-field').text(myItemInStorage); 
   });
 
+  // delete all values when delete all button clicked
+  $('.btn-deleteall').on('click', function(){
+    localStorage.clear();
+    var myItemInStorage = JSON.parse(localStorage.getItem('inputFieldValue'));
+    $('.list-display-field').text(myItemInStorage); 
+  });
+
 });

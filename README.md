@@ -22,7 +22,7 @@ Create Read Update Delete using localStorage with JS, HTML and CSS
 
 
 ### Sprint 2: creating a user model and a notes model
-- [ ] create user model which stores user id and username
+- [x] create user model which stores user id and username
 	- [ ] be able to save and retrieve user from db
 - [ ] create a notes model which stores notes id, title, body
 	- [ ] be able to save and retrieve notes from db

@@ -39,4 +39,57 @@ $(document).ready(function(){
     $('.list-display-field').text(myItemInStorage); 
   });
 
+  //create user model which stores user id and username
+  var User = function(username) {
+    this.username = username;
+    this.id = null;
+    this.save();
+  }
+
+  /*
+  {'inputFieldValue': ['haha', 'boohoo']}
+
+  {'Users': {
+    '1': {'username': 'eliana'}, 
+    '2': {'username': 'bigo'}}
+  }
+  */
+
+  //save and retrieve user from db
+  User.prototype.save = function() {
+    //user object where key is the id and value is the username
+
+    // in all of our DB interactions there are going to be three stages
+    // stage 1 - retrieve the whole table data from the database and JSON.parse it
+    // stage 2 - manipulate the resulting javascript objects in memory
+    // stage 3 - store the whole table data back as JSON into the DB
+
+    // stage 1
+    var users = JSON.parse(localStorage.getItem('Users'));
+    if (users === null) {
+      users = {};
+    }
+
+    // stage 2
+    if (this.id === null) {
+      this.id = Object.keys(users).length;
+    } 
+
+    var user = {
+      username: this.username
+    }
+
+    users[this.id] = user;
+
+    // stage 3
+    localStorage.setItem('Users', JSON.stringify(users));
+  }
+ 
+  localStorage.clear();
+  var eliana = new User("eliana");
+  var oliver = new User("oliver");
+  oliver.username = "bigo";
+  oliver.save();
+
+
 });

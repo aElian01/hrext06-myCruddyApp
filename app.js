@@ -39,10 +39,18 @@ $(document).ready(function(){
     $('.list-display-field').text(myItemInStorage); 
   });
 
+
+
+
+
+
+
   //create user model which stores user id and username
-  var User = function(username) {
+  var User = function(username, id) {
+    console.log("** calling new User('"+username+"')");  
+
     this.username = username;
-    this.id = null;
+    this.id = id;
     this.save();
   }
 
@@ -57,6 +65,8 @@ $(document).ready(function(){
 
   //save and retrieve user from db
   User.prototype.save = function() {
+    console.log("** calling User.save('"+this.username+"')");  
+
     //user object where key is the id and value is the username
 
     // in all of our DB interactions there are going to be three stages
@@ -71,7 +81,7 @@ $(document).ready(function(){
     }
 
     // stage 2
-    if (this.id === null) {
+    if (this.id === undefined) {
       this.id = Object.keys(users).length;
     } 
 
@@ -85,11 +95,32 @@ $(document).ready(function(){
     localStorage.setItem('Users', JSON.stringify(users));
   }
  
+  User.load = function(username) {
+    console.log("** calling User.load('"+username+"')");  
+    //retrieve table data from db
+    var data = JSON.parse(localStorage.getItem('Users'));
+    //find the user
+    for (var key in data) {
+      if (data[key]['username'] === username) {
+        var user = new User(username, key);
+        return user; 
+      } 
+    } 
+    //instantiate User object for the user
+  }
+
+
+
+  // THESE ARE OUR TESTS DON'T DELETE THEM
   localStorage.clear();
-  var eliana = new User("eliana");
-  var oliver = new User("oliver");
-  oliver.username = "bigo";
+  window.eliana = new User('eliana');
+  User.load('eliana');
+  window.oliver = new User('oliver');
+  oliver.username = 'bigo';
   oliver.save();
 
+  window.eliana = User.load('eliana');
+  window.bigo = User.load('bigo');
+  User.load('wha')
 
 });

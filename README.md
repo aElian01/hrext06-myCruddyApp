@@ -22,20 +22,21 @@ Create Read Update Delete using localStorage with JS, HTML and CSS
 
 
 ### Sprint 2: creating a user model and a notes model
-- [x] create user model which stores user id and username
-	- [ ] be able to save and retrieve user from db
-- [ ] create a notes model which stores notes id, title, body
-	- [ ] be able to save and retrieve notes from db
-- [ ] extend user and notes model for update and delete
-- [ ] extend user model to retrieve all notes by user
-- [ ] extend note model to retrieve notes in chronological order
+- [x] create user model which stores username and id
+    - [x] check for unique username
+	- [x] be able to save and retrieve user from db
+- [x] create a notes model which stores notes id, title, body
+	- [x] be able to save and retrieve notes from db
+- [x] extend user and notes model for update and delete
+- [x] extend user model to retrieve all notes by user
+- [x] extend note model to retrieve notes in chronological order
 
 
 ### Sprint 3: adding hashtags and hashtag cloud
-- [ ] extend notes model and table to support hashtags
-- [ ] parse and update hashtags out of note bodies
-- [ ] ability to query notes by hashtag
-- [ ] implement a way to get unique tag counts
+- [x] extend notes model and table to support hashtags
+- [x] parse and update hashtags out of note bodies
+- [x] ability to query notes by hashtag
+- [x] implement a way to get unique tag counts
 
 
 ### Sprint 4: add UI 
